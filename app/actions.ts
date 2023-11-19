@@ -107,7 +107,7 @@ export async function getSharedChat(id: string) {
 export async function shareChat(chat: Chat) {
   const session = await auth()
 
-  if (!session?.user?.id || session.user.sub !== chat.userId) {
+  if (!session?.user?.sub || session.user.sub !== chat.userId) {
     return {
       error: 'Unauthorize'
     }
