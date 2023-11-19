@@ -7,22 +7,14 @@ import { cn } from '@/lib/utils'
 import { IconClose } from '@/components/ui/icons'
 
 const Sheet = SheetPrimitive.Root
-
 const SheetTrigger = SheetPrimitive.Trigger
-
 const SheetClose = SheetPrimitive.Close
 
 const SheetPortal = ({
-  className,
   children,
   ...props
 }: SheetPrimitive.DialogPortalProps) => (
-  <SheetPrimitive.Portal
-    className={cn('fixed inset-0 z-50 flex', className)}
-    {...props}
-  >
-    {children}
-  </SheetPrimitive.Portal>
+  <SheetPrimitive.Portal {...props}>{children}</SheetPrimitive.Portal>
 )
 SheetPortal.displayName = SheetPrimitive.Portal.displayName
 
